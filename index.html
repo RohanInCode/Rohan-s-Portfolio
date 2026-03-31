@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Radhavaram Rohan - Aspiring Cybersecurity Analyst & Web Developer. Passionate about digital forensics, secure coding, and building full stack web applications." />
+  <title>Rohan | Aspiring Cybersecurity Analyst & Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+  </div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-trail-container" id="cursorTrail"></div>
+
+  <!-- ========== PARTICLES ========== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>Rohan<span class="logo-bracket">/&gt;</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#certificates" class="nav-link" data-section="certificates">Certificates</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        <span class="name-line">Radhavaram</span>
+        <span class="name-line accent">Rohan</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-static">I'm a&nbsp;</span>
+        <span class="role-dynamic" id="roleDynamic"></span>
+        <span class="role-cursor">|</span>
+      </div>
+      <p class="hero-description">
+        Aspiring Cybersecurity Analyst with a love for web development
+        bridging the gap between building secure apps and understanding how attacks happen.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" id="heroViewWork">
+          <span>View My Work</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-outline" id="heroContact">
+          <span>Let's Talk</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-ring ring-3"></div>
+      <div class="avatar-ring ring-2"></div>
+      <div class="avatar-ring ring-1"></div>
+      <div class="avatar-glow"></div>
+      <div class="avatar-container">
+        <img src="profile_avatar.png" alt="Rohan - Developer" class="avatar-img" />
+      </div>
+      <div class="orbit-icon" style="--angle:0deg; --radius:170px;">
+        <div class="orbit-dot" title="React">Re</div>
+      </div>
+      <div class="orbit-icon" style="--angle:72deg; --radius:170px;">
+        <div class="orbit-dot" title="Python">Py</div>
+      </div>
+      <div class="orbit-icon" style="--angle:144deg; --radius:170px;">
+        <div class="orbit-dot" title="Node.js">Nd</div>
+      </div>
+      <div class="orbit-icon" style="--angle:216deg; --radius:170px;">
+        <div class="orbit-dot" title="Django">Dj</div>
+      </div>
+      <div class="orbit-icon" style="--angle:288deg; --radius:170px;">
+        <div class="orbit-dot" title="Database">DB</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card-visual" data-aos>
+          <div class="about-img-frame">
+            <img src="profile_avatar.png" alt="About Rohan" class="about-img" />
+            <div class="img-decoration dec-1"></div>
+            <div class="img-decoration dec-2"></div>
+          </div>
+          <div class="about-social-float">
+            <a href="https://github.com/RohanInCode" target="_blank" class="social-float-btn" id="aboutGithub"
+              aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/radhavaram-rohan" target="_blank" class="social-float-btn"
+              id="aboutLinkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="mailto:rohanradhavaram8@gmail.com" class="social-float-btn" id="aboutEmail" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-content" data-aos>
+          <h3 class="about-subtitle">Aspiring Cybersecurity Analyst | <span class="gradient-text">Web Developer</span>
+          </h3>
+          <p class="about-text">
+            I'm a developer who genuinely loves building things on the web â€” from Django backends
+            to React frontends. I won't call myself an expert, but I put my heart into every
+            project and I'm always learning something new.
+          </p>
+          <p class="about-text">
+            Cybersecurity is where my curiosity runs deepest â€” with a growing interest in
+            digital forensics, I enjoy investigating how attacks happen, analysing artefacts,
+            and understanding the story behind a breach. Alongside that, secure coding practices,
+            network fundamentals, and vulnerability assessment are areas I'm actively building
+            expertise in. My goal is to bridge the gap between development and security, with a
+            long-term focus on forensic analysis and incident response.
+          </p>
+
+          <div class="about-details">
+            <div class="detail-item">
+              <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+              <div>
+                <span class="detail-label">Education</span>
+                <span class="detail-value">B.Tech in CS &mdash; Minor in Cybersecurity</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">India</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+              <div>
+                <span class="detail-label">Availability</span>
+                <span class="detail-value available">Open to Work</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+              <div>
+                <span class="detail-label">Focus</span>
+                <span class="detail-value">Full Stack & AI</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://drive.google.com/uc?export=download&id=1HcvOMxNOqdevZUnyK40SATHYKHNi3o1R" class="btn btn-primary" id="downloadCV" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="techstack-wrapper">
+
+        <!-- Frontend -->
+        <div class="tech-group" data-aos>
+          <div class="tech-group-header">
+            <span class="tech-group-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <h3 class="tech-group-title">Frontend</h3>
+          </div>
+          <div class="tech-tiles">
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#61dafb" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></span>
+              <span class="tech-tile-name">React.js</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#e34f26" stroke-width="2"><path d="M4 3l1.5 17L12 22l6.5-2L20 3z"/><path d="M8 8h8l-.5 6-3.5 1-3.5-1-.2-3"/></svg></span>
+              <span class="tech-tile-name">HTML5</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1572b6" stroke-width="2"><path d="M4 3l1.5 17L12 22l6.5-2L20 3z"/><path d="M16 8H8l.3 4h7.4l-.5 5-3.2.9-3.2-.9-.2-2.5"/></svg></span>
+              <span class="tech-tile-name">CSS3</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f7df1e" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17v-4a2 2 0 1 0 4 0"/><path d="M15 9v8"/></svg></span>
+              <span class="tech-tile-name">JavaScript</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M6 12s1-3 4-4 5 1 5 1 1-3 4-4 5 1 5 1"/><path d="M1 18s1-3 4-4 5 1 5 1 1-3 4-4 5 1 5 1"/></svg></span>
+              <span class="tech-tile-name">Tailwind CSS</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#3178c6" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6"/><path d="M15 9v9"/></svg></span>
+              <span class="tech-tile-name">TypeScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="tech-group" data-aos>
+          <div class="tech-group-header">
+            <span class="tech-group-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
+            <h3 class="tech-group-title">Backend</h3>
+          </div>
+          <div class="tech-tiles">
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#3776ab" stroke-width="2"><path d="M12 2C8 2 6 5 6 8v2h2v8h8V10h2V8c0-3-2-6-6-6z"/><path d="M9 6h.01M15 6h.01"/></svg></span>
+              <span class="tech-tile-name">Python</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#44b78b" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg></span>
+              <span class="tech-tile-name">Django</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#68a063" stroke-width="2"><path d="M12 2L3 7v5c0 5 4 9 9 10 5-1 9-5 9-10V7z"/></svg></span>
+              <span class="tech-tile-name">Node.js</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+              <span class="tech-tile-name">REST APIs</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#336791" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+              <span class="tech-tile-name">PostgreSQL</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#47a248" stroke-width="2"><path d="M12 2C9 2 7 6 7 10c0 3 2 5 5 6v6"/><path d="M12 2c3 0 5 4 5 8 0 3-2 5-5 6"/></svg></span>
+              <span class="tech-tile-name">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & DevOps -->
+        <div class="tech-group" data-aos>
+          <div class="tech-group-header">
+            <span class="tech-group-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            <h3 class="tech-group-title">Tools &amp; DevOps</h3>
+          </div>
+          <div class="tech-tiles">
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f05032" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M8 6h8"/><path d="M6 8v8"/><path d="M18 8v2"/><path d="M12 16v-4"/></svg></span>
+              <span class="tech-tile-name">Git &amp; GitHub</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#2496ed" stroke-width="2"><rect x="2" y="10" width="20" height="8" rx="2"/><rect x="5" y="7" width="4" height="3"/><rect x="10" y="7" width="4" height="3"/></svg></span>
+              <span class="tech-tile-name">Docker</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ff9900" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></span>
+              <span class="tech-tile-name">AWS</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#007acc" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+              <span class="tech-tile-name">VS Code</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fcc624" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></span>
+              <span class="tech-tile-name">Linux</span>
+            </div>
+            <div class="tech-tile">
+              <span class="tech-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ff6c37" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></span>
+              <span class="tech-tile-name">Postman</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Civic Sense -->
+        <div class="project-card featured" data-aos>
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder pi-1">
+              <div class="pi-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="pi-lines"></div>
+            </div>
+            <div class="project-overlay">
+              <a href="https://civicsense-1-b44u.onrender.com/" target="_blank" class="overlay-btn" id="proj1Demo">Live Demo</a>
+              <a href="https://github.com/RohanInCode/civicSense" target="_blank" class="overlay-btn outline" id="proj1Code">View Code</a>
+            </div>
+            <span class="project-badge">Featured</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">React</span>
+              <span class="ptag">Django</span>
+              <span class="ptag">PostgreSQL</span>
+            </div>
+            <h3 class="project-title">Civic Sense &ndash; Smart Civic Issue Reporting Platform</h3>
+            <p class="project-desc">
+              A full-featured civic issue reporting platform enabling citizens to report
+              problems with GPS tagging, media uploads, and real-time status tracking.
+              Includes an admin dashboard for authorities to manage and resolve complaints.
+            </p>
+            <div class="project-footer">
+              <div class="project-stars">
+                <!-- Removed fake stars for a cleaner look or could leave it out -->
+              </div>
+              <div class="project-links">
+                <a href="https://civicsense-1-b44u.onrender.com/" target="_blank" id="proj1Demo2" class="plink">Live Demo &rarr;</a>
+                <a href="https://github.com/RohanInCode/civicSense" target="_blank" id="proj1Code2" class="plink" style="margin-left: 1rem;">GitHub &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Expense Tracker -->
+        <div class="project-card" data-aos>
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder pi-2">
+              <div class="pi-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div class="pi-lines"></div>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/RohanInCode/Expense_Tracker" target="_blank" class="overlay-btn outline" id="proj2Code">View Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">Budgeting</span>
+              <span class="ptag">Finance</span>
+            </div>
+            <h3 class="project-title">Smart Expense Tracker Using Basic Budgeting Rule</h3>
+            <p class="project-desc">
+              An intelligent expense tracking application designed to help users manage their finances 
+              by applying fundamental budgeting rules. It categorizes spending and provides insights 
+              to maintain financial health.
+            </p>
+            <div class="project-footer">
+              <div class="project-stars">
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/RohanInCode/Expense_Tracker" target="_blank" id="proj2Demo2" class="plink">GitHub &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-cta" data-aos>
+        <a href="https://github.com/RohanInCode" target="_blank" class="btn btn-outline" id="viewAllProjects">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+          </svg>
+          View All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section certificates-section" id="certificates">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">My <span class="gradient-text">Certificates</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cert-grid" id="certGrid">
+
+        <!-- Certificate 1: Oracle OCI -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon">Verified &#10003;</div>
+          <div class="cert-header" style="--cert-color: #F80000;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><circle cx="20" cy="20" r="18" fill="#F80000"/><text x="20" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="white">O</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">Oracle</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">OCI AI Foundations Associate</h3>
+            <p class="cert-desc">Oracle Cloud Infrastructure AI Foundations â€” covering AI & ML concepts, OCI AI
+              services, and cloud-based AI solutions.</p>
+            <div class="cert-meta">
+              <span class="cert-id">Oracle University</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="https://drive.google.com/file/d/1-e-eVIuAM9cLLa5DJ5pevgly71i1LPCs/view?usp=sharing" class="cert-btn" id="cert1View" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Credential
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 100%;">&#10003;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 2: AWS DevOps -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon">Verified &#10003;</div>
+          <div class="cert-header" style="--cert-color: #FF9900;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="8" fill="#FF9900"/><text x="20" y="27" text-anchor="middle" font-size="13" font-weight="bold" fill="white">AWS</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">Amazon Web Services</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Getting Started with DevOps on AWS</h3>
+            <p class="cert-desc">Introduction to DevOps principles, AWS tools for CI/CD pipelines, automation, and
+              cloud-native development practices.</p>
+            <div class="cert-meta">
+              <span class="cert-id">AWS Training & Certification</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="https://drive.google.com/file/d/11vf8H2Y42deN04A4l2DtNYy4-XOWmS7d/view?usp=sharing" class="cert-btn" id="cert2View" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Credential
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 100%;">&#10003;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 3: NPTEL Cloud Computing -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon">Verified &#10003;</div>
+          <div class="cert-header" style="--cert-color: #1a73e8;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="8" fill="#1a73e8"/><text x="20" y="27" text-anchor="middle" font-size="10" font-weight="bold" fill="white">NPTEL</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">NPTEL</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Cloud Computing</h3>
+            <p class="cert-desc">NPTEL certification covering cloud architecture, virtualization, deployment models,
+              service models, and cloud security fundamentals.</p>
+            <div class="cert-meta">
+              <span class="cert-id">IIT / NPTEL</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="https://drive.google.com/file/d/1utzcj51dprR7Uf0ra-Ffny-aKPLEt2xo/view?usp=sharing" class="cert-btn" id="cert3View" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Credential
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 100%;">&#10003;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 4: Cisco â€” IN PROGRESS -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">In Progress...</div>
+          <div class="cert-header" style="--cert-color: #049fd9;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="8" fill="#049fd9"/><text x="20" y="27" text-anchor="middle" font-size="9" font-weight="bold" fill="white">CISCO</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">Cisco NetAcad</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Cisco Networking Basics</h3>
+            <p class="cert-desc">Foundational networking concepts including IP addressing, network protocols, LAN/WAN
+              architecture, and basic troubleshooting. Currently in progress.</p>
+            <div class="cert-meta">
+              <span class="cert-id">Cisco Networking Academy</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="#" class="cert-btn" id="cert4View" target="_blank" style="opacity:0.6;pointer-events:none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Coming Soon
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 60%;">~60%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 5: LPU Cyber Security -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon">Verified &#10003;</div>
+          <div class="cert-header" style="--cert-color: #7c3aed;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="8" fill="#7c3aed"/><text x="20" y="27" text-anchor="middle" font-size="11" font-weight="bold" fill="white">LPU</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">LPU</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Cyber Security Essentials</h3>
+            <p class="cert-desc">Core cybersecurity concepts including threat landscape, network security, ethical
+              hacking basics, and security best practices.</p>
+            <div class="cert-meta">
+              <span class="cert-id">Lovely Professional University</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="https://files.lpu.in/umsweb/skilldevcourse/SkillDevelopmentCertificates/12304897_864_20_08_2025.pdf?_gl=1*zq56qe*_gcl_au*MTc0OTIzMzM2Ny4xNzYxOTcyMTY0LjE5OTg3OTIyNS4xNzYxOTcyMTcwLjE3NjE5NzIyMzQ." class="cert-btn" id="cert5View" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Credential
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 100%;">&#10003;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 6: Generative AI -->
+        <div class="cert-card" data-aos>
+          <div class="cert-ribbon">Verified &#10003;</div>
+          <div class="cert-header" style="--cert-color: #10a37f;">
+            <div class="cert-issuer-logo"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="8" fill="#10a37f"/><text x="20" y="24" text-anchor="middle" font-size="9" font-weight="bold" fill="white">Gen</text><text x="20" y="34" text-anchor="middle" font-size="9" font-weight="bold" fill="white">AI</text></svg></div>
+            <div class="cert-issuer-info">
+              <span class="cert-platform">Generative AI</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Master Generative AI & AI Tools Essentials</h3>
+            <p class="cert-desc">Comprehensive course on Generative AI concepts, prompt engineering, ChatGPT, and
+              practical AI tools for real-world applications.</p>
+            <div class="cert-meta">
+              <span class="cert-id">Generative AI & ChatGPT</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <a href="https://www.udemy.com/certificate/UC-74462e20-8794-42e9-955c-61283e4f0d92/" class="cert-btn" id="cert6View" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Credential
+            </a>
+            <div class="cert-progress">
+              <div class="cert-score-ring" style="--pct: 100%;">âœ“</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cert-note" data-aos>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        Click "View Credential" links above to replace with your actual certificate URLs.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-aos>
+          <h3 class="contact-heading">Have a project in mind?</h3>
+          <p class="contact-subtext">
+            I'm always excited to work on new challenges. Whether it's a startup idea,
+            a freelance project, or just a chat about tech â€” I'd love to hear from you!
+          </p>
+
+          <div class="contact-cards">
+            <a href="mailto:rohanradhavaram8@gmail.com" class="contact-card" id="contactEmail">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">Email</span>
+                <span class="cc-value">rohanradhavaram8@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/radhavaram-rohan" target="_blank" class="contact-card"
+              id="contactLinkedin">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">LinkedIn</span>
+                <span class="cc-value">Radhavaram Rohan</span>
+              </div>
+            </a>
+            <a href="https://github.com/RohanInCode" target="_blank" class="contact-card" id="contactGithub">
+              <div class="cc-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </div>
+              <div class="cc-text">
+                <span class="cc-label">GitHub</span>
+                <span class="cc-value">@RohanInCode</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-aos>
+          <div class="form-group">
+            <label for="formName">Your Name</label>
+            <input type="text" id="formName" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="formEmail">Your Email</label>
+            <input type="email" id="formEmail" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="formSubject">Subject</label>
+            <input type="text" id="formSubject" name="subject" placeholder="Project Collaboration" />
+          </div>
+          <div class="form-group">
+            <label for="formMsg">Message</label>
+            <textarea id="formMsg" name="message" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width" id="formSubmit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+            <span>Send Message</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span>âœ… Message sent! I'll get back to you soon.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-bracket">&lt;</span>Rohan<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-tagline">Building the web, one line at a time.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/RohanInCode" target="_blank" aria-label="GitHub" id="footerGithub"
+            class="footer-social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/radhavaram-rohan" target="_blank" aria-label="LinkedIn"
+            id="footerLinkedin" class="footer-social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:rohanradhavaram8@gmail.com" aria-label="Email" id="footerEmail" class="footer-social-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Radhavaram Rohan. Crafted with &#10084; and lots of coffee &#9749;</p>
+        <p>Built with HTML, CSS & JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Supabase must load before script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
